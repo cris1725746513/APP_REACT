@@ -2,6 +2,8 @@ apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
 
+
+apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
 /**
  * This is the configuration block to customize your React Native Android app.
  * By default you don't need to apply any configuration, just uncomment the lines you need.
@@ -82,6 +84,13 @@ android {
         versionCode 1
         versionName "1.0"
     }
+  //  splits {
+  //      abi {
+   //         reset()
+  //          universalApk true  // If true, also generate a universal APK
+   //         include "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+   //     }
+  //  }
     signingConfigs {
         debug {
             storeFile file('debug.keystore')
@@ -108,7 +117,8 @@ dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
     implementation("com.facebook.react:flipper-integration")
-
+    implementation project(':react-native-gesture-handler')
+    implementation project(':react-native-vector-icons')
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {

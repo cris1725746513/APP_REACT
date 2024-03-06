@@ -9,3 +9,11 @@ const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
 const config = {};
 
 module.exports = mergeConfig(getDefaultConfig(__dirname), config);
+
+
+/*
+ {preguntaActual === Preguntas.length - 1 && (
+        <Button title="Enviar respuestas" onPress={() => alert('Respuestas enviadas!')}/>
+      )}
+*/
+
